@@ -31,7 +31,7 @@ public class BookShop {
         int i = 1;
         while(i != 0) {
         if(num>0 && 11>num) {
-        	books[num-1].rent(num-1);
+        	books[num-1].rent(num);
         	i--;
         }else if(num <=0 || num>=11){
         	System.out.println("잘못된 번호입니다 다시 입력해주세요");

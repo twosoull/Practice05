@@ -50,11 +50,8 @@ public class Book {
 	}
 	//메소드
 	public void rent(int num){
-		if (num>=0||10>num) {
 			setStateCode(0);
 			System.out.println(getTitle()+"이(가) 대여됐습니다.");
-		}
-		
 	}
 	public void print() {
 		if (stateCode == 0) {
@@ -62,7 +59,11 @@ public class Book {
 		}else if(stateCode == 1) {
 			System.out.print("재고있음\n");
 		}
-    	
+//		if (stateCode == 0) {
+//			System.out.println(bookNo+"책 제목 :"+title+", 작가:"+author+", 대여 유무:대여중");
+//		}else if(stateCode == 1) {
+//			System.out.print(bookNo+"책 제목 :"+title+", 작가:"+author+", 대여 유무:재고 있음");
+//		}
     }
     
     
