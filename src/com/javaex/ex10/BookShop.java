@@ -24,26 +24,16 @@ public class BookShop {
         Scanner scanner = new Scanner(System.in);
         System.out.print("대여 하고 싶은 책의 번호를 입력하세요:");
         int num = scanner.nextInt();
+        while(num<1 || num>10){
+        	System.out.print(num+"책은 없습니다. 다시입력해주세요 :");
+        	num = scanner.nextInt();
+        }
+        	books[num-1].rent();
+        
        
-
         // (1) 입력된 번호에 맞는 책을 찾아 대여 되었음(상태코드=0)을 체크 합니다.
         // 코드작성
-        int i = 1;
-        while(i != 0) {
-        if(num>0 && 11>num) {
-        	books[num-1].rent(num);
-        	i--;
-        }else if(num <=0 || num>=11){
-        	System.out.println("잘못된 번호입니다 다시 입력해주세요");
-        	System.out.print("대여 하고 싶은 책의 번호를 입력하세요:");
-            num = scanner.nextInt();
-            if(num>0 && 11>num) {
-            	i--;
-            	books[num-1].rent(num-1);
-            	
-            }
-        }
-        }
+        
         
 
         System.out.println("*****도서 정보 출력하기******");
@@ -52,17 +42,11 @@ public class BookShop {
         scanner.close();
     }
 
- 
     //(2)전달받은 배열을 모두 출력하는 메소드
     private static void displayBookInfo(Book[] books) {
-        for(int i = 0; i<books.length; i++) {
-        	
-        	System.out.print(books[i].getBookNo()+" 책 제목:"+books[i].getTitle()+", 작가:"+books[i].getAuthor()+
-        			", 대여유무: ");
-        	books[i].print();
-        }
-        
-        
+        for(int i = 0 ; i < books.length; i++) {
+    	books[i].print();
     	//코드작성
+        }
     }
 }
